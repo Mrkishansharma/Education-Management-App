@@ -1,33 +1,39 @@
-<section class="bg-[cyan] dark:bg-gray-900">
+<section class="bg-[#f3f3f3]">
   <div class="flex justify-center min-h-screen">
-   
+    <div
+      class="hidden bg-cover lg:block lg:w-2/4"
+      style="background-image: url(../../../assets/images/instructor\(1\).png)"
+    ></div>
 
     <div
       class="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5"
     >
       <div class="w-full">
         <h1
-          class="text-2xl font-semibold tracking-wider text-gray-800 capitalize dark:text-white"
+          class="text-2xl font-semibold tracking-wider text-gray-800 capitalize "
         >
           Create Instructor Profile
         </h1>
 
-     
+        <p class="mt-4 text-gray-500 ">
+          Let’s get you all set up so you can verify your personal details and
+          begin setting up your profile.
+        </p>
         <form
           [formGroup]="instructorForm"
           (ngSubmit)="createProfile()"
-          class="flex  gap-6 mt-10 flex-col"
+          class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
         >
           <!-- Full Name -->
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+            <label class="block mb-2 text-sm text-gray-600 "
               >Full Name</label
             >
             <input
               formControlName="name"
               type="text"
-              placeholder="Enter Name here"
-              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+              placeholder="John Doe"
+              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-blue-400  focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
             />
             <p
               *ngIf="
@@ -41,26 +47,26 @@
           </div>
           <!-- Email (Read-only) -->
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+            <label class="block mb-2 text-sm text-gray-600 "
               >Email address</label
             >
             <input
               formControlName="email"
               type="email"
               readonly
-              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:none"
+              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:none"
             />
           </div>
 
           <!-- Date of Birth -->
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+            <label class="block mb-2 text-sm text-gray-600 "
               >Date of Birth</label
             >
             <input
               formControlName="date_of_birth"
               type="date"
-              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-blue-400  focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
             />
             <p
               *ngIf="
@@ -75,12 +81,12 @@
 
           <!-- Department Dropdown -->
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+            <label class="block mb-2 text-sm text-gray-600 "
               >Department</label
             >
             <select
              formControlName="department"
-              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-blue-400  focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
             >
               <option value="" disabled selected>Select Department</option>
               <option value="Science">Science</option>
@@ -100,7 +106,7 @@
           </div>
           <!-- Gender -->
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+            <label class="block mb-2 text-sm text-gray-600 "
               >Gender</label
             >
             <div class="flex items-center mt-2" >
@@ -147,14 +153,14 @@
           </div>
           <!-- Contact Number -->
           <div>
-            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200"
+            <label class="block mb-2 text-sm text-gray-600 "
               >Contact Number</label
             >
             <input
               type="text"
               placeholder="XXX-XX-XXXX-XXX"
               formControlName="contact_number"
-              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+              class="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:border-blue-400  focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
             />
             <p>
               <span
@@ -173,7 +179,7 @@
                 "
                 class="text-red-500 mt-1"
               >
-                Contact number must be at least 10 characters long
+                Contact number must be at least 10 digits
               </span>
             </p>
           </div>
